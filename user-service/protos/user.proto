@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package user;
+
+// User service definition.
+service UserService {
+  // Get user details by user ID
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}
+
+// Request message for GetUser
+message GetUserRequest {
+  int32 id = 1; 
+}
+
+// Response message for GetUser
+message GetUserResponse {  
+    int32 id = 1; // tags to uniquely identify the fields.
+    string name = 2;   
+    string email = 3;  
+}
